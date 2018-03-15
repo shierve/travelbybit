@@ -1,0 +1,25 @@
+2018-03-15 15:11:29 - F# Interactive for F# 4.1
+2018-03-15 15:11:29 - Freely distributed under the Apache 2.0 Open Source License
+2018-03-15 15:11:29 - For help type #help;;
+2018-03-15 15:11:29 - > val it : ResizeArray<System.Type * (obj -> seq<string * string> * string)> =
+2018-03-15 15:11:29 -   seq []
+2018-03-15 15:11:29 - --> Added '/IfSharp/bin' to library include path
+2018-03-15 15:11:29 - --> Referenced '/IfSharp/bin/IfSharp.Kernel.dll' (file may be locked by F# Interactive process)
+2018-03-15 15:11:29 - --> Referenced '/IfSharp/bin/NetMQ.dll' (file may be locked by F# Interactive process)
+2018-03-15 15:11:31 - Unknown content type on shell. msg_type is `comm_info_request`
+2018-03-15 15:11:43 - #load "Paket.fsx"
+2018-03-15 15:11:43 - Paket.Package [
+2018-03-15 15:11:43 -     "FSharp.Data"
+2018-03-15 15:11:43 - ]
+2018-03-15 15:11:43 - #load "Paket.Generated.Refs.fsx"
+2018-03-15 15:11:43 - open FSharp.Data
+2018-03-15 15:12:24 - [<Literal>]
+2018-03-15 15:12:24 - let csvpath = "/notebooks/TravelByBit/travelbybit.csv"
+2018-03-15 15:12:24 - type Poll = CsvProvider<csvpath, Schema = "string, int, string, bool, string, decimal">
+2018-03-15 15:12:24 - type Vote = Poll.Row
+2018-03-15 15:12:26 - let sample =
+2018-03-15 15:12:26 -     Poll.GetSample().Rows
+2018-03-15 15:12:26 -     |> Seq.toArray
+2018-03-15 15:12:26 - sample.Length
+2018-03-15 15:12:29 - let firstVote = sample.[0]
+2018-03-15 15:12:29 - firstVote
